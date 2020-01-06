@@ -8,7 +8,7 @@ const convertToCelsius = (tempInKelvin) => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = (tempInKelvin) => Math.floor(tempInKelvin + -459.67);
 
 const renderData = (data) => {
-  listenToTempChange();
+  
   if (tempBtn.classList.contains('fahrenheit')) {
     tempNum.innerText = convertToFahrenheit(data.main.temp);
     document.querySelector('.temp-degree').innerText = '';
