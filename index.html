@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="assets/wu-icons-style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/wu-icons-style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="app-title">
-        <h2>Weatherify</h2>
-
+      <h2>Weatherify</h2>
     </nav>
     <main class="app-work">
-        <div class="current-location-wrapper">            <h3>You're currently in <span class="current-location">Lagos</span>.</h3></div>
+      <div class="current-location-wrapper">
+        <h4 class="current-location no-location">
+                Unable to identify your location
+        </h4>
+      </div>
 
-        <section class="app-info">
+      <section class="app-info">
+        <div class="weather-img">
+          <i class="wu wu-black wu-128 wu-chanceflurries"></i>
+        </div>
+        <div class="temperature">
+          <span class="temp-num">__</span><span class="temp-degree">o</span>
+          <span class="temp-celsius">c</span>          
+        </div>
 
-                <div class="weather-img">
-                        <i class="wu wu-black wu-128 wu-chanceflurries"></i>
-                    </div>
-                    <div class="temperature">
-                        <span class="temp-num">18 </span><span class="temp-degree">o</span>
-                        <span class="temp-celsius">c</span>
-                    </div>
-                    <div class="weather-description">
-                        <h3>Few clouds</h3>
-                    </div>
-                    <div class="weather-location">
-                       <span class="city"><em>Lagos, </em> </span><span class="country"><em>Nigeria.</em> </span> 
-                    </div>
-        </section>
-        <section class="location">
-            <form action="" class="get-location">
-                <input type="text" name="" placeholder="enter a City name to see the weather" id="get-location-id">
-            </form>
-        </section>
+        <div>
+          <h3 class="weather-description">_______</h3>
+        </div>
+        <div class="weather-location">
+          <span><em class="city"></em>, </span
+          ><span><em class="country"></em> </span>
+          
+        </div>
+      </section>
+      <section class="location">
+        <form action="" class="get-location">
+          <input
+            type="text"
+            name=""
+            placeholder="enter a City name to see the weather"
+            id="get-location-id"
+          />
+        </form>
+      </section>
     </main>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

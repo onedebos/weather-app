@@ -79,9 +79,18 @@ body{
 .temperature{
     display: flex;
     justify-content: center;
+    cursor: pointer;
 
 }
 
 .temp-celsius{
     font-size:1.8em;
+}
+
+.no-location{
+    color:red;
+}
+
+.found-location{
+    color:rgb(7, 14, 56);
 }

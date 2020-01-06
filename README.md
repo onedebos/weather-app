@@ -22,7 +22,7 @@
 
 ## Clone the project
 ```
-git clone https://github.com/onedebos/to-do-list.git
+git clone https://github.com/onedebos/weather-app.git
 ```
 
 ## Install dependencies
