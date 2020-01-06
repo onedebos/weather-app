@@ -2,7 +2,7 @@
 
 > In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com. 
 
-![screenshot](./screenshot.png)
+![screenshot](./Screenshot.png)
 
 ## Built With
 

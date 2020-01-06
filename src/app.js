@@ -8,6 +8,7 @@ const convertToCelsius = (tempInKelvin) => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = (tempInKelvin) => Math.floor(tempInKelvin + -459.67);
 
 const renderData = (data) => {
+  listenToTempChange();
   if (tempBtn.classList.contains('fahrenheit')) {
     tempNum.innerText = convertToFahrenheit(data.main.temp);
     document.querySelector('.temp-degree').innerText = '';
@@ -30,7 +31,7 @@ const getWeatherAtLocation = (inputLocation) => {
   fetch(weatherApi, { mode: 'cors' })
     .then((response) => response.json())
     .then((data) => {
-      if (data.main === undefined) {
+      if (data.main == undefined) {
         noLocationFound.innerText = 'Location weather unavailable';
         noLocationFound.classList.remove('found-location');
         noLocationFound.classList.add('no-location');
@@ -40,6 +41,16 @@ const getWeatherAtLocation = (inputLocation) => {
       }
     });
 };
+
+const listenToTempChange = () =>{
+  tempBtn.addEventListener('click', () => {
+    tempBtn.classList.toggle('fahrenheit');
+    const cityInput = document.querySelector('#get-location-id').value;
+    getWeatherAtLocation(cityInput);
+  });
+}
+
+
 
 const showWeatherAtUserLat = (lat, lng) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
@@ -52,11 +63,6 @@ const showWeatherAtUserLat = (lat, lng) => {
     });
 };
 
-tempBtn.addEventListener('click', () => {
-  tempBtn.classList.toggle('fahrenheit');
-  const cityInput = document.querySelector('#get-location-id').value;
-  getWeatherAtLocation(cityInput);
-});
 
 const runForm = () => {
   const submitForm = document.querySelector('.get-location');
@@ -68,18 +74,12 @@ const runForm = () => {
 };
 
 const grabUserLocation = (lat, lng) => {
-  if (lat === undefined && lng === undefined) {
+  if (lat == undefined && lng == undefined) {
     noLocationFound.innerText = 'Click \'Allow\' to enable location';
   } else {
     showWeatherAtUserLat(lat, lng);
   }
 };
-
-tempBtn.addEventListener('click', () => {
-  tempBtn.classList.toggle('fahrenheit');
-  const cityInput = document.querySelector('#get-location-id').value;
-  getWeatherAtLocation(cityInput);
-});
 
 const getCurrentLocation = () => {
   // Get the latitude and the longitude;
@@ -97,3 +97,4 @@ const getCurrentLocation = () => {
 getCurrentLocation();
 runForm();
 grabUserLocation();
+listenToTempChange();
