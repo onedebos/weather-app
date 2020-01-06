@@ -1,6 +1,6 @@
 # Weather App
 
-> In this project, I build a weather app using promises and the Fetch API. I'd be using the API provided by openweatherapp.com. 
+> In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com. 
 
 ![screenshot](./screenshot.png)
 
@@ -9,7 +9,6 @@
 - HTML, CSS, Javascript
 - Materialize CSS
 - Fetch API
-- Webpack
 - npm
 
 ## Linters used

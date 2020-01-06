@@ -13,7 +13,7 @@ appBody.innerHTML = `
 
 <section class="app-info">
   <div class="weather-img">
-    <i class="wu wu-black wu-128 wu-chanceflurries"></i>
+  <i class="wu wu-black wu-128 wu-chanceflurries"></i>
   </div>
   <div class="temperature">
     <span class="temp-num">__</span><span class="temp-degree"></span>
