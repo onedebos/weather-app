@@ -12,6 +12,9 @@
 - Materialize CSS
 - Fetch API
 - npm
+- OpenweatherApp API
+- Unsplash API
+- Webpack
 
 ## Linters used
 - ESlint
