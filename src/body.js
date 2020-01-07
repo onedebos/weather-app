@@ -12,6 +12,7 @@ appBody.innerHTML = `
 </div>
 
 <section class="app-info">
+
   <div class="weather-img">
   <i class="wu wu-black wu-128 wu-chanceflurries"></i>
   </div>

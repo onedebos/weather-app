@@ -1,102 +1,99 @@
-*{
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    height:100vh;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
-    font-family:Arial, Helvetica, sans-serif ;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:1em;
-    scroll-behavior: none;
+body {
+  height: 100vh;
+  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  scroll-behavior: none;
 }
 
-
-.app-title{
-    background-color: white;
-    padding:1em 7em;
-    text-align: center;
-    border: 1px solid white;
-    border-radius: 10px 10px 0 0;
-    color:lightslategray;
+.app-title {
+  background-color: white;
+  padding: 1em 7em;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px 10px 0 0;
+  color: lightslategray;
 }
 
-.app-info{
-    background-color: lightblue;
-    padding:4em 6.85em;
-
-    text-align: center;
+.app-info {
+  background-color: lightblue;
+  padding: 4em 6.85em;
+  text-align: center;
+  max-width: 347px;
 }
 
-.app-work{
-    background-color: white;
-    border-radius: 0px 0px 10px 10px;
-    color:rgb(7, 14, 56);
+.app-work {
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
+  color: rgb(7, 14, 56);
+  max-width: 347px;
 }
 
-.weather-description{
-    margin-top:4em;
-    text-transform: capitalize;
+.weather-description {
+  margin-top: 4em;
+  text-transform: capitalize;
 }
 
-img{
-    width: 128px;
-    height: 128px;
+img {
+  width: 128px;
+  height: 128px;
 }
 
-
-.location{
-    padding-bottom: 2em;
-    text-align: center;
+.location {
+  padding-bottom: 2em;
+  text-align: center;
 }
 
-#get-location-id{
-    margin-top:1em;
-    width:80%;
-    padding:0.5em .5em;
-    border:none;
-    border-bottom: 1px solid teal;
-
+#get-location-id {
+  margin-top: 1em;
+  width: 80%;
+  padding: 0.5em 0.5em;
+  border: none;
+  border-bottom: 1px solid teal;
 }
 
-#get-location-id:focus{
-    border-bottom: 2px solid teal;
-    
+#get-location-id:focus {
+  border-bottom: 2px solid teal;
 }
 
-.current-location-wrapper{
-    text-align:center;
-    background-color: lightblue;
-    padding-top:1em;
-    font-weight: 800;
+.current-location-wrapper {
+  text-align: center;
+  background-color: lightblue;
+  padding-top: 1em;
+  font-weight: 800;
 }
 
-
-.temp-num{
-    font-size:2em;
-    font-weight: 800;
-
+.new-location-wrapper {
+  background: linear-gradient(#d3cce3, #e9e4f0);
 }
 
-.temperature{
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-
+.temp-num {
+  font-size: 2em;
+  font-weight: 800;
 }
 
-
-.temp-celsius{
-    font-size:1.8em;
+.temperature {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.no-location{
-    color:red;
+.temp-celsius {
+  font-size: 1.8em;
 }
 
-.found-location{
-    color:rgb(7, 14, 56);
+.no-location {
+  color: red;
+}
+
+.found-location {
+  color: rgb(7, 14, 56);
 }
