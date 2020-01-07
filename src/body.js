@@ -1,4 +1,4 @@
-const appLoad = () =>{
+const appLoad = () => {
   const appBody = document.querySelector('.app-body');
   appBody.innerHTML = `
 <nav class="app-title">
@@ -40,8 +40,7 @@ const appLoad = () =>{
 </section>
 </main>
 `;
-
-}
+};
 
 
 export default appLoad;
