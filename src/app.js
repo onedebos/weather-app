@@ -7,7 +7,7 @@ const tempBtn = document.querySelector('.temperature');
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
 
-const renderData = data => {
+const renderData = (data) => {
   if (tempBtn.classList.contains('fahrenheit')) {
     tempNum.innerText = convertToFahrenheit(data.main.temp);
     document.querySelector('.temp-degree').innerText = '';
@@ -25,11 +25,11 @@ const renderData = data => {
   noLocationFound.classList.add('found-location');
 };
 
-const getWeatherAtLocation = inputLocation => {
+const getWeatherAtLocation = (inputLocation) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
     .then(response => response.json())
-    .then(data => {
+    .then((data) => {
       if (data.main === undefined) {
         noLocationFound.innerText = 'Location weather unavailable';
         noLocationFound.classList.remove('found-location');
@@ -53,7 +53,7 @@ const showWeatherAtUserLat = (lat, lng) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
     .then(response => response.json())
-    .then(data => {
+    .then((data) => {
       noLocationFound.innerText = `You're currently in ${data.name}`;
       noLocationFound.classList.add('found-location');
       renderData(data);
@@ -62,7 +62,7 @@ const showWeatherAtUserLat = (lat, lng) => {
 
 const runForm = () => {
   const submitForm = document.querySelector('.get-location');
-  submitForm.addEventListener('submit', event => {
+  submitForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const cityInput = document.querySelector('#get-location-id').value;
     getWeatherAtLocation(cityInput);
@@ -78,7 +78,7 @@ const grabUserLocation = (lat, lng) => {
 };
 
 const getCurrentLocation = () => {
-  const successFunction = position => {
+  const successFunction = (position) => {
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
     grabUserLocation(lat, lng);
