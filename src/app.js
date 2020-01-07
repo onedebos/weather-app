@@ -1,8 +1,7 @@
 import appLoad from './body';
-
+import getName from 'country-list'
 
 appLoad();
-const { getName } = require('country-list');
 
 const tempNum = document.querySelector('.temp-num');
 const tempDescription = document.querySelector('.weather-description');
@@ -11,8 +10,8 @@ const city = document.querySelector('.city');
 const country = document.querySelector('.country');
 const tempBtn = document.querySelector('.temperature');
 const icon = document.querySelector('.wu');
-const convertToCelsius = (tempInKelvin) => Math.floor(tempInKelvin + -273.15);
-const convertToFahrenheit = (tempInKelvin) => Math.floor(tempInKelvin + -459.67);
+const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
+const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
 
 const renderData = (data) => {
   if (tempBtn.classList.contains('fahrenheit')) {
@@ -28,7 +27,7 @@ const renderData = (data) => {
   tempDescription.innerText = data.weather[0].description;
   city.innerText = data.name;
 
-  country.innerText = getName(data.sys.country);
+  country.innerText = getName.getName(data.sys.country);
   icon.classList.toggle('wu-chancerain');
   noLocationFound.classList.remove('no-location');
   noLocationFound.classList.add('found-location');
@@ -37,7 +36,7 @@ const renderData = (data) => {
 const getWeatherAtLocation = (inputLocation) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((data) => {
       if (data.main === undefined) {
         noLocationFound.innerText = 'Location weather unavailable';
@@ -61,7 +60,7 @@ const listenToTempChange = () => {
 const showWeatherAtUserLat = (lat, lng) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((data) => {
       noLocationFound.innerText = `You're currently in ${data.name}`;
       noLocationFound.classList.add('found-location');
