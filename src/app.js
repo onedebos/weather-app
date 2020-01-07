@@ -4,8 +4,8 @@ const noLocationFound = document.querySelector('.current-location');
 const city = document.querySelector('.city');
 const country = document.querySelector('.country');
 const tempBtn = document.querySelector('.temperature');
-const convertToCelsius = ((tempInKelvin) => Math.floor(tempInKelvin + -273.15));
-const convertToFahrenheit = ((tempInKelvin) => Math.floor(tempInKelvin + -459.67));
+const convertToCelsius = (tempInKelvin) => Math.floor(tempInKelvin + -273.15);
+const convertToFahrenheit = (tempInKelvin) => Math.floor(tempInKelvin + -459.67);
 
 const renderData = ((data) => {
   if (tempBtn.classList.contains('fahrenheit')) {
@@ -28,7 +28,7 @@ const renderData = ((data) => {
 const getWeatherAtLocation = ((inputLocation) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
-    .then(((response) => response.json()))
+    .then((response) => response.json())
     .then((data) => {
       if (data.main === undefined) {
         noLocationFound.innerText = 'Location weather unavailable';
@@ -52,7 +52,7 @@ const listenToTempChange = (() => {
 const showWeatherAtUserLat = ((lat, lng) => {
   const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
-    .then(((response) => response.json()))
+    .then((response) => response.json())
     .then((data) => {
       noLocationFound.innerText = `You're currently in ${data.name}`;
       noLocationFound.classList.add('found-location');
