@@ -34,14 +34,14 @@ const renderData = (data) => {
   tempDescription.innerText = data.weather[0].description;
   city.innerText = data.name;
 
-  country.innerText = data.sys.country;
+  country.innerText = getName.getName(data.sys.country);
   icon.classList.toggle('wu-chancerain');
   noLocationFound.classList.remove('no-location');
   noLocationFound.classList.add('found-location');
 };
 
 const getWeatherAtLocation = (inputLocation) => {
-  const weatherApi = `http://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
+  const weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
     .then(response => response.json())
     .then((data) => {
@@ -65,7 +65,7 @@ const listenToTempChange = () => {
 };
 
 const showWeatherAtUserLat = (lat, lng) => {
-  const weatherApi = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
+  const weatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2874e0623c8807994e18916c8cd78f21`;
   fetch(weatherApi, { mode: 'cors' })
     .then(response => response.json())
     .then((data) => {
