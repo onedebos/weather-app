@@ -1,4 +1,3 @@
-import getName from 'node_modules/country-list/country-list';
 import appLoad from './body';
 
 
@@ -28,7 +27,7 @@ const renderData = (data) => {
   tempDescription.innerText = data.weather[0].description;
   city.innerText = data.name;
 
-  country.innerText = getName.getName(data.sys.country);
+  country.innerText = data.sys.country;
   icon.classList.toggle('wu-chancerain');
   noLocationFound.classList.remove('no-location');
   noLocationFound.classList.add('found-location');
