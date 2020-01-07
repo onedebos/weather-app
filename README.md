@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bab47221-46d8-4847-8b22-809a9e266a20/deploy-status)](https://app.netlify.com/sites/sleepy-wing-03ddf5/deploys)
+
 # Weather App
 
 > In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com. 
