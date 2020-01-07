@@ -9,8 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "country-list": "^2.2.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-react": "^7.17.0"
+    "eslint-plugin-react": "^7.17.0",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

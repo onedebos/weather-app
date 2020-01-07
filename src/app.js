@@ -1,9 +1,15 @@
+import appLoad from './body'
+
+
+appLoad();
+const {getName } = require('country-list');
 const tempNum = document.querySelector('.temp-num');
 const tempDescription = document.querySelector('.weather-description');
 const noLocationFound = document.querySelector('.current-location');
 const city = document.querySelector('.city');
 const country = document.querySelector('.country');
 const tempBtn = document.querySelector('.temperature');
+const icon = document.querySelector('.wu');
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
 
@@ -20,7 +26,9 @@ const renderData = (data) => {
 
   tempDescription.innerText = data.weather[0].description;
   city.innerText = data.name;
-  country.innerText = data.sys.country;
+  
+  country.innerText = getName(data.sys.country);
+  icon.classList.toggle('wu-chancerain');
   noLocationFound.classList.remove('no-location');
   noLocationFound.classList.add('found-location');
 };

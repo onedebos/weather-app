@@ -1,6 +1,6 @@
-const appBody = document.querySelector('.app-body');
-
-appBody.innerHTML = `
+const appLoad = () =>{
+  const appBody = document.querySelector('.app-body');
+  appBody.innerHTML = `
 <nav class="app-title">
 <h2>Weatherify</h2>
 </nav>
@@ -40,3 +40,8 @@ appBody.innerHTML = `
 </section>
 </main>
 `;
+
+}
+
+
+export default appLoad;
