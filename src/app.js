@@ -1,4 +1,4 @@
-import getName from 'node_modules/country-list/country-list.js';
+import getName from 'node_modules/country-list/country-list';
 import appLoad from './body';
 
 
