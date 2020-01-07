@@ -1,6 +1,5 @@
-import getName from 'node_modules/country-list/country-list';
+import getName from 'country-list';
 import appLoad from './body';
-
 
 appLoad();
 
@@ -13,6 +12,13 @@ const tempBtn = document.querySelector('.temperature');
 const icon = document.querySelector('.wu');
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
+
+const getImageAtLocation = (location) => {
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const imgApi = `https://source.unsplash.com/${w}x${h}/?${location}`;
+  document.body.style.backgroundImage = `url(${imgApi})`;
+};
 
 const renderData = (data) => {
   if (tempBtn.classList.contains('fahrenheit')) {
@@ -66,6 +72,7 @@ const showWeatherAtUserLat = (lat, lng) => {
       noLocationFound.innerText = `You're currently in ${data.name}`;
       noLocationFound.classList.add('found-location');
       renderData(data);
+      getImageAtLocation(data.name);
     });
 };
 
@@ -75,12 +82,13 @@ const runForm = () => {
     event.preventDefault();
     const cityInput = document.querySelector('#get-location-id').value;
     getWeatherAtLocation(cityInput);
+    getImageAtLocation(cityInput);
   });
 };
 
 const grabUserLocation = (lat, lng) => {
   if (lat === undefined && lng === undefined) {
-    noLocationFound.innerText = 'Click \'Allow\' to enable location';
+    noLocationFound.innerText = "Click 'Allow' to enable location";
   } else {
     showWeatherAtUserLat(lat, lng);
   }
