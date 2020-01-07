@@ -17,7 +17,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://onedebos.github.io/weather-app/)
+[Live Demo Link](https://sleepy-wing-03ddf5.netlify.com/)
 
 ## Clone the project
 ```
