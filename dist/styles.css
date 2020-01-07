@@ -25,18 +25,20 @@
   
   .app-info {
     background-color: lightblue;
+    opacity: 0.8;
     padding: 4em 6.85em;
     text-align: center;
     max-width: 347px;
   }
   
   .app-work {
-    background-color: white;
+
     border-radius: 0px 0px 10px 10px;
     color: rgb(7, 14, 56);
     max-width: 347px;
   }
   
+
   .weather-description {
     margin-top: 4em;
     text-transform: capitalize;
@@ -50,6 +52,8 @@
   .location {
     padding-bottom: 2em;
     text-align: center;
+        background-color: white;
+        border-radius: 0px 0px 10px 10px;
   }
   
   #get-location-id {
@@ -66,6 +70,7 @@
   
   .current-location-wrapper {
     text-align: center;
+    opacity: 0.8;
     background-color: lightblue;
     padding-top: 1em;
     font-weight: 800;

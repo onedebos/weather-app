@@ -12,6 +12,8 @@ const tempBtn = document.querySelector('.temperature');
 const icon = document.querySelector('.wu');
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
+const w = window.innerWidth;
+const h = window.innerHeight;
 
 const renderData = (data) => {
   if (tempBtn.classList.contains('fahrenheit')) {
@@ -54,6 +56,7 @@ const listenToTempChange = () => {
     tempBtn.classList.toggle('fahrenheit');
     const cityInput = document.querySelector('#get-location-id').value;
     getWeatherAtLocation(cityInput);
+    
   });
 };
 
@@ -65,6 +68,7 @@ const showWeatherAtUserLat = (lat, lng) => {
       noLocationFound.innerText = `You're currently in ${data.name}`;
       noLocationFound.classList.add('found-location');
       renderData(data);
+      getImageAtLocation(data.name);
     });
 };
 
@@ -74,6 +78,7 @@ const runForm = () => {
     event.preventDefault();
     const cityInput = document.querySelector('#get-location-id').value;
     getWeatherAtLocation(cityInput);
+    getImageAtLocation(cityInput);
   });
 };
 
@@ -97,7 +102,14 @@ const getCurrentLocation = () => {
   }
 };
 
+const getImageAtLocation = (location,w,h) =>{
+  const imgApi = `https://source.unsplash.com/${w}x${h}/?${location}`;
+  document.body.style.backgroundImage = `url(${imgApi})`;
+  
+}
+
 getCurrentLocation();
 runForm();
 grabUserLocation();
 listenToTempChange();
+
