@@ -1,5 +1,6 @@
+import getName from 'country-list';
 import appLoad from './body';
-import getName from 'country-list'
+
 
 appLoad();
 
