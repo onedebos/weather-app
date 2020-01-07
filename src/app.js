@@ -98,7 +98,14 @@ const getCurrentLocation = () => {
   }
 };
 
-getCurrentLocation();
+const getImageAtLocation = (location) =>{
+  const imgApi = 'https://api.unsplash.com/search/photos?page=1&query=office';
+  fetch(imgApi)
+   .then(response => response.json())
+     .then( data => console.log(data));
+}
+// getCurrentLocation();
 runForm();
 grabUserLocation();
 listenToTempChange();
+getImageAtLocation();
