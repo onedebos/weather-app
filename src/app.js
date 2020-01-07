@@ -1,8 +1,8 @@
-import getName from 'country-list';
+
 import appLoad from './body';
 
 appLoad();
-
+import getName from 'country-list';
 const tempNum = document.querySelector('.temp-num');
 const tempDescription = document.querySelector('.weather-description');
 const noLocationFound = document.querySelector('.current-location');
@@ -106,14 +106,8 @@ const getCurrentLocation = () => {
   }
 };
 
-const getImageAtLocation = (location) =>{
-  const imgApi = 'https://api.unsplash.com/search/photos?page=1&query=office';
-  fetch(imgApi)
-   .then(response => response.json())
-     .then( data => console.log(data));
-}
-// getCurrentLocation();
+
+getCurrentLocation();
 runForm();
 grabUserLocation();
 listenToTempChange();
-getImageAtLocation();

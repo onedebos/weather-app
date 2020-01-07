@@ -5,12 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-=======
->>>>>>> app-logic
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -19,11 +17,11 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-react": "^7.17.0",
+    "gh-pages": "^2.2.0",
     "webpack": "^4.41.5"
   },
   "devDependencies": {
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "mode": "development"
+    "webpack-cli": "^3.3.10"
   }
 }
