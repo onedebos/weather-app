@@ -10,6 +10,7 @@
 - Materialize CSS
 - Fetch API
 - npm
+- Webpack
 
 ## Linters used
 - ESlint

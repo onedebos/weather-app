@@ -106,7 +106,9 @@ const getCurrentLocation = () => {
   }
 };
 
+
 getCurrentLocation();
 runForm();
 grabUserLocation();
 listenToTempChange();
+getImageAtLocation();
