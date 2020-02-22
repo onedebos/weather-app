@@ -112,6 +112,9 @@ img {
     height: 50px;
   }
 
+  .app-title h2 {
+    margin-top: 0.5em;
+  }
   .app-info {
     padding: 0;
   }
