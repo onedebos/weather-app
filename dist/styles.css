@@ -12,7 +12,6 @@ body {
   align-items: center;
   margin-top: 1em;
   overflow: hidden;
-
 }
 
 .app-title {
@@ -100,4 +99,23 @@ img {
 
 .found-location {
   color: rgb(7, 14, 56);
+}
+
+@media (min-width: 360px) and (max-width: 415px) {
+  .app-work {
+    width: 250px;
+  }
+
+  .app-title {
+    padding: 0;
+    width: 248px;
+    height: 50px;
+  }
+
+  .app-title h2 {
+    margin-top: 0.5em;
+  }
+  .app-info {
+    padding: 0;
+  }
 }
