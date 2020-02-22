@@ -1,5 +1,5 @@
 const appLoad = () => {
-  const appBody = document.querySelector('.app-body');
+  const appBody = document.querySelector(".app-body");
   appBody.innerHTML = `
 <nav class="app-title">
 <h2>Weatherify</h2>
@@ -34,13 +34,12 @@ const appLoad = () => {
   <form action="" class="get-location">
     <input
       type="text"
-      placeholder="enter a City name to see the weather" id="get-location-id" onclick=reset();
+      placeholder="enter city name" id="get-location-id" onclick=reset();
     />
   </form>
 </section>
 </main>
 `;
 };
-
 
 export default appLoad;
