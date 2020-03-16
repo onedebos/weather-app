@@ -2,7 +2,7 @@
 
 # Weather App
 
-> In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com. 
+> In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com.
 
 ![screenshot](./Screenshot.png)
 
@@ -12,22 +12,20 @@
 - Materialize CSS
 - Fetch API
 - npm
-<<<<<<< HEAD
-=======
 - OpenweatherApp API
 - Unsplash API
->>>>>>> 681841ce86fa3106eda1cffb8ac554636c50137e
 - Webpack
 
 ## Linters used
-- ESlint
 
+- ESlint
 
 ## Live Demo
 
 [Live Demo Link](https://sleepy-wing-03ddf5.netlify.com/)
 
 ## Clone the project
+
 ```
 git clone https://github.com/onedebos/weather-app.git
 ```
@@ -37,7 +35,6 @@ git clone https://github.com/onedebos/weather-app.git
 ```
 npm install
 ```
-
 
 ## Authors
 
@@ -51,8 +48,6 @@ npm install
 
 Give a ⭐️ if you like this project!
 
-
 ## 📝 License
 
 This project is [MIT](lic.url) licensed.
-
