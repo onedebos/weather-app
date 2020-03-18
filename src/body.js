@@ -11,6 +11,7 @@ const appLoad = () => {
   </h4>
 </div>
 
+
 <section class="app-info">
 
   <div class="weather-img">
@@ -20,7 +21,6 @@ const appLoad = () => {
     <span class="temp-num">__</span><span class="temp-degree"></span>
     <span class="temp-celsius"></span>          
   </div>
-
   <div>
     <h3 class="weather-description">_______</h3>
   </div>
