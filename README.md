@@ -15,6 +15,7 @@
 - OpenweatherApp API
 - Unsplash API
 - Webpack
+- Figma for UI/UX design
 
 ## Linters used
 
