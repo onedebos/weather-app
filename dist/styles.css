@@ -199,7 +199,7 @@ form {
   }
 
   .bottom-mobile {
-    display: block;
+    display: flex;
     height: 40%;
     width: 100%;
   }
