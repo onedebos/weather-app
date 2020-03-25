@@ -29,7 +29,7 @@ const appLoad = () => {
 <input
   type="text"
   placeholder="enter city name and hit enter.." id="get-location-id" 
-/>
+></input>
 <button class="temp-btn" type="button">To fahreneit</button>
 </form>
 
