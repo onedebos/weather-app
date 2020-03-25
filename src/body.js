@@ -26,11 +26,13 @@ const appLoad = () => {
 </div>
 
 <form action="" class="get-location">
+<div>
 <input
   type="text"
   placeholder="enter city name and hit enter.." id="get-location-id" 
 ></input>
-<button class="temp-btn" type="button">To fahreneit</button>
+</div>
+<button class="temp-btn" type="button">To fahrenheit</button>
 </form>
 
 <svg class="bottom-bg" width="1436" height="398" viewBox="0 0 1436 398" fill="none" xmlns="http://www.w3.org/2000/svg">
