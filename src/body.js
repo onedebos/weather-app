@@ -26,12 +26,12 @@ const appLoad = () => {
 </div>
 
 <form action="" class="get-location">
-<div>
+
 <input
   type="text"
   placeholder="enter city name and hit enter.." id="get-location-id" 
 ></input>
-</div>
+
 <button class="temp-btn" type="button">To fahrenheit</button>
 </form>
 

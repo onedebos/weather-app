@@ -170,7 +170,7 @@ form {
 
 @media (min-width: 300px) and (max-width: 450px) {
   body {
-    background-size: 460px 150px;
+    background-size: 470px 150px;
   }
 
   .weather-details-div {
@@ -200,13 +200,14 @@ form {
 
   .bottom-mobile {
     display: block;
+    height: 40%;
     width: 100%;
   }
 }
 
-@media (min-height: 800px) and (max-height: 890) {
+@media (min-height: 860px) and (max-height: 890) {
   .bottom-mobile {
-    height: 50%;
+    height: 60%;
   }
 }
 
