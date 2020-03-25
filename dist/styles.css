@@ -204,15 +204,3 @@ form {
     width: 100%;
   }
 }
-
-@media (min-height: 860px) and (max-height: 890) {
-  .bottom-mobile {
-    height: 60%;
-  }
-}
-
-@media (min-height: 896px) {
-  .bottom-mobile {
-    height: 80%;
-  }
-}
