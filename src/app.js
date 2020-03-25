@@ -1,6 +1,5 @@
 import appLoad from "./body";
 import getName from "country-list";
-import { search, runSearch } from "./search";
 
 appLoad();
 
