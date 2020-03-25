@@ -1,58 +1,62 @@
 import appLoad from "./body";
+import getName from "country-list";
+import { search, runSearch } from "./search";
 
 appLoad();
-import getName from "country-list";
-const tempNum = document.querySelector(".temp-num");
-const tempDescription = document.querySelector(".weather-description");
+
+const locationInput = document.querySelector("#get-location-id");
+const tempNum = document.querySelector(".city-temp");
+const tempDescription = document.querySelector(".city-weather");
 const noLocationFound = document.querySelector(".current-location");
-const city = document.querySelector(".city");
+const city = document.querySelector(".city-name");
 const country = document.querySelector(".country");
-const tempBtn = document.querySelector(".temperature");
-const icon = document.querySelector(".wu");
+const weatherBox = document.querySelector(".box");
+const spinner = document.querySelector(".spinner");
+const tempBtn = document.querySelector(".temp-btn");
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
 const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
 
-const getImageAtLocation = location => {
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-  const imgApi = `https://source.unsplash.com/${w}x${h}/?${location}`;
-  document.body.style.backgroundImage = `url(${imgApi})`;
-};
-
 const renderData = data => {
   if (tempBtn.classList.contains("fahrenheit")) {
+    tempBtn.innerHTML = "To celsius";
     tempNum.innerText = convertToFahrenheit(data.main.temp);
     document.querySelector(".temp-degree").innerText = "";
     document.querySelector(".temp-celsius").innerText = "F";
   } else {
+    tempBtn.innerHTML = "To fahrenheit";
     tempNum.innerText = convertToCelsius(data.main.temp);
     document.querySelector(".temp-degree").innerText = "o";
     document.querySelector(".temp-celsius").innerText = "C";
   }
 
-  tempDescription.innerText = data.weather[0].description;
-  city.innerText = data.name;
-
   country.innerText = getName.getName(data.sys.country);
-  icon.classList.toggle("wu-chancerain");
-  noLocationFound.classList.remove("no-location");
-  noLocationFound.classList.add("found-location");
 };
 
 const getWeatherAtLocation = inputLocation => {
-  const weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
-  fetch(weatherApi, { mode: "cors" })
-    .then(response => response.json())
-    .then(data => {
-      if (data.main === undefined) {
-        noLocationFound.innerText = "Location weather unavailable";
-        noLocationFound.classList.remove("found-location");
-        noLocationFound.classList.add("no-location");
-      } else {
-        noLocationFound.innerText = `Weather in ${data.name}`;
-        renderData(data);
-      }
-    });
+  if (locationInput.value === "") {
+    alert("enter a location to start");
+  } else {
+    spinner.classList.remove("hide");
+    weatherBox.classList.add("hide");
+    noLocationFound.classList.add("hide");
+    const weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
+    fetch(weatherApi, { mode: "cors" })
+      .then(response => response.json())
+      .then(data => {
+        if (data.main === undefined) {
+          spinner.classList.add("hide");
+          noLocationFound.classList.remove("hide");
+          noLocationFound.innerText = "City not found";
+        } else {
+          spinner.classList.add("hide");
+          weatherBox.classList.remove("hide");
+
+          tempDescription.innerText = data.weather[0].description;
+          city.innerText = data.name;
+          renderData(data);
+        }
+      });
+  }
 };
 
 const listenToTempChange = () => {
@@ -68,10 +72,9 @@ const showWeatherAtUserLat = (lat, lng) => {
   fetch(weatherApi, { mode: "cors" })
     .then(response => response.json())
     .then(data => {
-      noLocationFound.innerText = `You're currently in ${data.name}`;
-      noLocationFound.classList.add("found-location");
+      tempDescription.innerText = data.weather[0].description;
+      city.innerText = data.name;
       renderData(data);
-      getImageAtLocation(data.name);
     });
 };
 
@@ -81,13 +84,12 @@ const runForm = () => {
     event.preventDefault();
     const cityInput = document.querySelector("#get-location-id").value;
     getWeatherAtLocation(cityInput);
-    getImageAtLocation(cityInput);
   });
 };
 
 const grabUserLocation = (lat, lng) => {
   if (lat === undefined && lng === undefined) {
-    noLocationFound.innerText = "Enter a City name to start";
+    noLocationFound.classList.add("hide");
   } else {
     showWeatherAtUserLat(lat, lng);
   }

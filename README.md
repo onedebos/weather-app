@@ -36,6 +36,15 @@ git clone https://github.com/onedebos/weather-app.git
 npm install
 ```
 
+## Setup the Project
+
+`npm run build`
+`npm run watch`
+
+## Additional Information
+
+- The App uses the Google Places API to autocomplete search requests. You'd need to create your own API key to use the feature. You'd also need to enable CORS in your browser. The best way I've found to do that is using the CORS extension in chrome.
+
 ## Authors
 
 👤 **Adebola**

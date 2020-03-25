@@ -5,7 +5,8 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+  background-image: url(./assets/hero-bg-shape.svg);
+  background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -14,68 +15,129 @@ body {
   overflow: hidden;
 }
 
-.app-title {
-  background-color: white;
-  padding: 1em 7em;
-  text-align: center;
-  border: 1px solid white;
-  border-radius: 10px 10px 0 0;
-  color: lightslategray;
-}
-
-.app-info {
-  background-color: lightblue;
-  opacity: 0.8;
-  padding: 4em 6.85em;
-  text-align: center;
-  max-width: 347px;
-}
-
 .app-work {
-  border-radius: 0px 0px 10px 10px;
-  color: rgb(7, 14, 56);
-  max-width: 347px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.weather-description {
-  margin-top: 4em;
-  text-transform: capitalize;
-}
-
-img {
-  width: 128px;
-  height: 128px;
-}
-
-.location {
-  padding-bottom: 2em;
+.app-title {
   text-align: center;
-  background-color: white;
-  border-radius: 0px 0px 10px 10px;
+  color: white;
+  margin-top: 1em;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.hero-p {
+  font-size: 1.5rem;
+}
+
+.weather-details-div {
+  margin: 0 auto;
+  margin-top: 5em;
+  height: 221px;
+  background-color: #4f0299;
+  border-radius: 29px;
+  box-shadow: 3px 3px 3px 3px #000000;
+  color: white;
+  width: 221px;
+  text-align: center;
+}
+
+.city-name {
+  padding-top: 0.5em;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.city-temp-hold {
+  padding: 1em 0;
+}
+
+.city-temp {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.city-weather {
+  font-size: 1.5rem;
+}
+
+.country {
+  color: #d2d2d2;
+}
+
+.temp-btn {
+  border: 0;
+  background-color: purple;
+  color: white;
+  padding: 1em;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  margin: 15px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+.spinner .path {
+  stroke: #93bfec;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.spinner.hide {
+  display: none;
+}
+
+.box.hide {
+  display: none;
 }
 
 #get-location-id {
-  margin-top: 1em;
-  width: 80%;
-  padding: 0.5em 0.5em;
-  border: none;
-  border-bottom: 1px solid teal;
+  width: 60%;
+  padding: 1em 0.5em;
+  font-size: 1.2rem;
+  border: 2px solid purple;
+  border-radius: 5px;
+}
+
+form {
+  margin-top: 5%;
+  text-align: center;
+  padding-bottom: 1.5em;
 }
 
 #get-location-id:focus {
-  border-bottom: 2px solid teal;
+  border-bottom: 3px solid purple;
 }
 
-.current-location-wrapper {
-  text-align: center;
-  opacity: 0.8;
-  background-color: lightblue;
-  padding-top: 1em;
-  font-weight: 800;
-}
-
-.new-location-wrapper {
-  background: linear-gradient(#d3cce3, #e9e4f0);
+.bottom-bg {
+  z-index: -255;
 }
 
 .temp-num {
@@ -83,39 +145,71 @@ img {
   font-weight: 800;
 }
 
-.temperature {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-
 .temp-celsius {
   font-size: 1.8em;
 }
 
 .no-location {
-  color: red;
+  color: white;
 }
 
-.found-location {
-  color: rgb(7, 14, 56);
+.current-location.hide {
+  display: none;
 }
 
-@media (min-width: 360px) and (max-width: 415px) {
-  .app-work {
-    width: 250px;
+.current-location {
+  color: white;
+  padding: 3em 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.bottom-mobile {
+  display: none;
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+  body {
+    background-size: 460px 150px;
   }
 
   .app-title {
-    padding: 0;
-    width: 248px;
-    height: 50px;
+    font-size: 1.2rem;
   }
 
-  .app-title h2 {
-    margin-top: 0.5em;
+  .hero-p {
+    font-size: 1rem;
+    margin: 0 1em;
   }
-  .app-info {
-    padding: 0;
+
+  #get-location-id {
+    margin-top: 2em;
+    padding: 0.5em;
+    width: 80%;
+  }
+
+  .temp-btn {
+    margin-top: 1em;
+  }
+
+  .bottom-bg {
+    display: none;
+  }
+
+  .bottom-mobile {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-height: 800px) and (max-height: 890) {
+  .bottom-mobile {
+    height: 50%;
+  }
+}
+
+@media (min-height: 896px) {
+  .bottom-mobile {
+    height: 80%;
   }
 }
