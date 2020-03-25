@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .app-work {
@@ -199,8 +199,8 @@ form {
   }
 
   .bottom-mobile {
-    display: flex;
-    /* height: 40%; */
+    display: block;
+    height: 40%;
     width: 100%;
   }
 }
