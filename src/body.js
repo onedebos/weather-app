@@ -50,14 +50,6 @@ const appLoad = () => {
 <path d="M813 408H1030L835.757 215L813 408Z" fill="#880088"/>
 </svg>
 
-<svg width="422" height="161" viewBox="0 0 422 161" fill="none" xmlns="http://www.w3.org/2000/svg" class="bottom-mobile">
-<path d="M291.158 0L178 161H410L291.158 0Z" fill="#CC0000"/>
-<path d="M8 154L224.452 40L422 154H8Z" fill="#D6002B"/>
-<path d="M0 161L53.7411 22L422 161H0Z" fill="#B10022"/>
-<path d="M228.728 51L410 161H26L228.728 51Z" fill="#D3006C"/>
-<path d="M220 161L247.993 51L375 161H220Z" fill="#AC0057"/>
-</svg>
- 
 
 
 </main>

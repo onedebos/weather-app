@@ -197,10 +197,4 @@ form {
   .bottom-bg {
     display: none;
   }
-
-  .bottom-mobile {
-    display: block;
-    height: 40%;
-    width: 100%;
-  }
 }
