@@ -173,6 +173,9 @@ form {
     background-size: 460px 150px;
   }
 
+  .weather-details-div {
+    box-shadow: 3px 3px 3px 3px #ffffff;
+  }
   .app-title {
     font-size: 1.2rem;
   }
@@ -184,7 +187,7 @@ form {
 
   #get-location-id {
     margin-top: 2em;
-    padding: 0.5em;
+    padding: 0;
     width: 80%;
   }
 
