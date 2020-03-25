@@ -22,7 +22,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://sleepy-wing-03ddf5.netlify.com/)
+[Live Demo Link](https://kind-carson-bb3068.netlify.com/)
 
 ## Clone the project
 
@@ -42,6 +42,10 @@ npm install
 `npm run watch`
 
 - Then open the `index.html` file with a live-server.
+
+## Original UI design
+
+[UI design](https://github.com/onedebos/Designs/blob/master/Weatherify.png)
 
 ## Authors
 
