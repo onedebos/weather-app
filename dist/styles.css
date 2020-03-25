@@ -200,7 +200,7 @@ form {
 
   .bottom-mobile {
     display: flex;
-    height: 40%;
+    /* height: 40%; */
     width: 100%;
   }
 }
