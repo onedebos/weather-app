@@ -1,5 +1,6 @@
 import appLoad from "./body";
 import getName from "country-list";
+import { isContext } from "vm";
 
 appLoad();
 
@@ -9,11 +10,17 @@ const tempDescription = document.querySelector(".city-weather");
 const noLocationFound = document.querySelector(".current-location");
 const city = document.querySelector(".city-name");
 const country = document.querySelector(".country");
+const icon = document.querySelector(".icon-box");
 const weatherBox = document.querySelector(".box");
+const boxContainter = document.querySelector(".weather-details-div");
 const spinner = document.querySelector(".spinner");
+const feels = document.querySelector(".feels");
 const tempBtn = document.querySelector(".temp-btn");
+const humidity = document.querySelector(".humidity");
+const wind = document.querySelector(".wind");
 const convertToCelsius = tempInKelvin => Math.floor(tempInKelvin + -273.15);
-const convertToFahrenheit = tempInKelvin => Math.floor(tempInKelvin + -459.67);
+const convertToFahrenheit = tempInKelvin =>
+  Math.floor(((tempInKelvin - 273.15) * 9) / 5 + 32);
 
 const renderData = data => {
   if (tempBtn.classList.contains("fahrenheit")) {
@@ -37,7 +44,10 @@ const getWeatherAtLocation = inputLocation => {
   } else {
     spinner.classList.remove("hide");
     weatherBox.classList.add("hide");
+    boxContainter.classList.remove("hide");
+    boxContainter.classList.add("move");
     noLocationFound.classList.add("hide");
+    icon.classList.add("hide");
     const weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${inputLocation}&APPID=2874e0623c8807994e18916c8cd78f21`;
     fetch(weatherApi, { mode: "cors" })
       .then(response => response.json())
@@ -49,8 +59,13 @@ const getWeatherAtLocation = inputLocation => {
         } else {
           spinner.classList.add("hide");
           weatherBox.classList.remove("hide");
-
           tempDescription.innerText = data.weather[0].description;
+          feels.innerText = `feels like ${convertToCelsius(
+            data.main.feels_like
+          )} degrees`;
+          icon.classList.remove("hide");
+          humidity.innerHTML = ` <strong>Humidity:</strong> ${data.main.humidity}% &nbsp; `;
+          wind.innerHTML = `<strong>Wind speed:</strong> ${data.wind.speed}mph `;
           city.innerText = data.name;
           renderData(data);
         }

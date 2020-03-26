@@ -12,7 +12,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
-  /* overflow: hidden; */
 }
 
 .app-work {
@@ -42,6 +41,7 @@ body {
   color: white;
   width: 221px;
   text-align: center;
+  transition: margin-top 1s ease-in-out;
 }
 
 .city-name {
@@ -65,6 +65,37 @@ body {
 
 .country {
   color: #d2d2d2;
+}
+
+.weather-icon .feels {
+  color: #d2d2d2;
+}
+.weather-details-div.hide {
+  visibility: hidden;
+}
+
+.icon-box {
+  text-align: center;
+  margin: 1em auto;
+  border-radius: 10px;
+  color: white;
+  width: 50%;
+  padding: 1em;
+  transition: padding 1s ease;
+  background-color: #794bc4;
+}
+
+.icon-box:first-child {
+  margin-right: 0.5em;
+}
+
+.icon-box.hide {
+  visibility: hidden;
+}
+
+img {
+  width: 15%;
+  height: 15%;
 }
 
 .temp-btn {
