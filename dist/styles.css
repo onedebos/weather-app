@@ -44,6 +44,19 @@ body {
   transition: margin-top 1s ease-in-out;
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.weather-details-div {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
 .city-name {
   padding-top: 0.5em;
   font-weight: 600;
@@ -201,7 +214,7 @@ form {
 
 @media (min-width: 300px) and (max-width: 450px) {
   body {
-    background-size: 470px 150px;
+    background-image: url(./assets/mobile-bg.svg);
   }
 
   .weather-details-div {
@@ -209,6 +222,7 @@ form {
   }
   .app-title {
     font-size: 1.2rem;
+    margin-top: 5%;
   }
 
   .hero-p {
