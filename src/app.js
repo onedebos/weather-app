@@ -26,6 +26,9 @@ const renderData = data => {
   if (tempBtn.classList.contains("fahrenheit")) {
     tempBtn.innerHTML = "To celsius";
     tempNum.innerText = convertToFahrenheit(data.main.temp);
+    feels.innerText = `feels like ${convertToFahrenheit(
+      data.main.feels_like
+    )} fahrenheit`;
     document.querySelector(".temp-degree").innerText = "";
     document.querySelector(".temp-celsius").innerText = "F";
   } else {
@@ -33,6 +36,9 @@ const renderData = data => {
     tempNum.innerText = convertToCelsius(data.main.temp);
     document.querySelector(".temp-degree").innerText = "o";
     document.querySelector(".temp-celsius").innerText = "C";
+    feels.innerText = `feels like ${convertToCelsius(
+      data.main.feels_like
+    )} degrees`;
   }
 
   country.innerText = getName.getName(data.sys.country);
@@ -60,9 +66,7 @@ const getWeatherAtLocation = inputLocation => {
           spinner.classList.add("hide");
           weatherBox.classList.remove("hide");
           tempDescription.innerText = data.weather[0].description;
-          feels.innerText = `feels like ${convertToCelsius(
-            data.main.feels_like
-          )} degrees`;
+
           icon.classList.remove("hide");
           humidity.innerHTML = ` <strong>Humidity:</strong> ${data.main.humidity}% &nbsp; `;
           wind.innerHTML = `<strong>Wind speed:</strong> ${data.wind.speed}mph `;
