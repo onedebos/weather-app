@@ -16,6 +16,7 @@
 - Unsplash API
 - Webpack
 - Figma for UI/UX design
+- Google places autocomplete API
 
 ## Linters used
 
