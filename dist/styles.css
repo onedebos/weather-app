@@ -232,6 +232,7 @@ form {
 
   .weather-details-div {
     box-shadow: 1px 1px 1px 1px #000000;
+    margin-top: 1em;
   }
   .app-title {
     font-size: 1.2rem;
