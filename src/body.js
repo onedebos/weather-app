@@ -30,11 +30,15 @@ const appLoad = () => {
 <div class="icon-box hide"><span class="wind"> &nbsp;</span><span class="humidity"></span><span class="precipitation"></span></div>
 
 <form action="" class="get-location">
-
+<div class="search">
+<div>
+<svg class="search-icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/></svg>
+</div>
 <input
   type="text"
   placeholder="enter city name and hit enter.." id="get-location-id" 
 ></input>
+</div>
 
 <button class="temp-btn" type="button">To fahrenheit</button>
 </form>

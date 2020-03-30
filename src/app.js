@@ -125,6 +125,11 @@ const getCurrentLocation = () => {
   }
 };
 
+function initialize() {
+  var input = document.getElementById("get-location-id");
+  new google.maps.places.Autocomplete(input);
+}
+google.maps.event.addDomListener(window, "load", initialize);
 // getCurrentLocation();
 runForm();
 grabUserLocation();

@@ -113,14 +113,21 @@ img {
 
 .temp-btn {
   border: 0;
-  background-color: purple;
+  background-color: rgb(49, 4, 49);
   color: white;
-  padding: 1em;
+  padding: 0.5em 3em;
   font-weight: 600;
   font-size: 1.2rem;
   border-radius: 5px;
 }
 
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search-icon {
+  position: absolute;
+}
 .spinner {
   animation: rotate 2s linear infinite;
   z-index: 2;
@@ -164,12 +171,18 @@ img {
 
 #get-location-id {
   width: 60%;
-  padding: 1em 0.5em;
+  padding: 0.5em 2em;
   font-size: 1.2rem;
-  border: 2px solid purple;
+  border: 0;
   border-radius: 5px;
+  background-color: #f1f3f4;
 }
 
+#get-location-id:focus {
+  background-color: white;
+  border: 1px solid grey;
+  transition: background-color 0.2s ease-in-out;
+}
 form {
   margin-top: 5%;
   text-align: center;
@@ -225,14 +238,18 @@ form {
     margin-top: 5%;
   }
 
+  .search-icon {
+    margin: 3% 3%;
+    fill: grey;
+  }
+
   .hero-p {
     font-size: 1rem;
     margin: 0 1em;
   }
 
   #get-location-id {
-    padding: 0.5em;
-    width: 80%;
+    width: 70%;
   }
 
   .temp-btn {
@@ -241,5 +258,43 @@ form {
 
   .bottom-bg {
     display: none;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1200px) {
+  .bottom-bg {
+    display: none;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (width: 768px) {
+  #get-location-id {
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  #get-location-id {
+    width: 50%;
+    margin-bottom: 0.5em;
+  }
+
+  .search-icon {
+    margin: 1.2% 1%;
+  }
+}
+
+@media (min-width: 960px) {
+  .search-icon {
+    margin: 0.5% 0.5%;
   }
 }
