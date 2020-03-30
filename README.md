@@ -6,6 +6,10 @@
 
 ![screenshot](./Screenshot.png)
 
+## Security warning
+
+- The API KEY although declared publicly here has been restricted.
+
 ## Built With
 
 - HTML, CSS, Javascript
