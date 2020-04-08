@@ -5,6 +5,8 @@
 > In this project, I build a weather app using promises and the Fetch API. In this project, I also considered using async and await functions but chose to use promises instead. For API calls, I used the API provided by openweatherapp.com.
 
 ![screenshot](./Screenshot.png)
+
+## Video demo
 ![video](./weatherify-video.gif)
 
 ## Security warning
@@ -53,6 +55,12 @@ npm install
 ## Original UI design
 
 [UI design](https://github.com/onedebos/Designs/blob/master/Weatherify.png)
+
+### Automated Tests
+- Currently, there are no automated tests avaailable for this project. This will be implemented at a later date.
+
+### Planned Feature
+- Find weather in my City button
 
 ## Authors
 
