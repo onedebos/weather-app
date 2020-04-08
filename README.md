@@ -15,7 +15,7 @@
 
 ## Built With
 
-- HTML, CSS, Javascript
+- HTML, CSS, JavaScript
 - Materialize CSS
 - Fetch API
 - npm
