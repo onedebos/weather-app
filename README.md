@@ -47,10 +47,9 @@ npm install
 
 ## See the project in your browser
 
-`npm run build`
-`npm run watch`
-
-- Then open the `index.html` file with a live-server.
+```npm run build```
+```npm run watch```
+Then open the `index.html` file with `live-server`.
 
 ## Original UI design
 
